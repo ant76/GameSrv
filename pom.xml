@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.trusov</groupId>
-    <artifactId>gamesrv</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>server</artifactId>
+    <version>1.0</version>
 
     <properties>
         <jetty.version>9.3.6.v20151106</jetty.version>
