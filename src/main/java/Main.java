@@ -1,21 +1,21 @@
+import frontend.Frontend;
+import frontend.Mirror;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
 
-/**
- * Created by user on 13.12.15.
- */
 public class Main {
     public static void main(String[] args) throws Exception {
-        Frontend frontend = new Frontend();
+        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+
+        context.addServlet(new ServletHolder(new Frontend()), "/auth_form");
+        context.addServlet(new ServletHolder(new Mirror()), "/mirror");
+//        context.addServlet(new ServletHolder(servlet), "/");
 
         Server server = new Server(8080);
-        ServletContextHandler context =
-                new ServletContextHandler(ServletContextHandler.SESSIONS);
         server.setHandler(context);
 
-        context.addServlet(new ServletHolder(frontend), '/authform');
-
         server.start();
-
         server.join();
     }
 }
