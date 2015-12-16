@@ -1,15 +1,18 @@
-import frontend.Frontend;
-import frontend.Mirror;
+package ru.trusov.main;
+
+import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import ru.trusov.frontend.Frontend;
+import ru.trusov.frontend.Mirror;
+
 
 public class Main {
+    private static final Logger logger = Logger.getLogger(Main.class);
+//        Logger logger = LoggerFactory.getLogger(ru.trusov.main.Main.class);
+
     public static void main(String[] args) throws Exception {
-        Logger logger = LoggerFactory.getLogger(Main.class);
-        logger.info("Hello World");
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
@@ -23,11 +26,11 @@ public class Main {
 
         server.start();
         logger.info("Server started");
-//        logger.trace("Hello World");
-//        logger.debug("Hello World");
-//        logger.info("Hello World");
-//        logger.warn("Hello World");
-//       logger.error("Hello World");
+        logger.trace("Hello World");
+        logger.debug("Hello World");
+        logger.info("Hello World");
+        logger.warn("Hello World");
+        logger.error("Hello World");
 
         server.join();
     }

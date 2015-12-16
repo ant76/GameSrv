@@ -1,6 +1,6 @@
-package frontend;
+package ru.trusov.frontend;
 
-import templater.PageGenerator;
+import ru.trusov.templater.PageGenerator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
